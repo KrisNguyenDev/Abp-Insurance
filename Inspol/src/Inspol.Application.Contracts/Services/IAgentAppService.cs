@@ -11,8 +11,8 @@ namespace Inspol.Services
 {
     public interface IAgentAppService : IApplicationService
     {
-        Task<AgentDto> GetAsync(Guid id);
-        Task<PagedResultDto<AgentDto>> GetListAsync(PagedAndSortedResultRequestDto input);
+        Task<AgentDto> GetByIdAsync(Guid id);
+        Task<PagedResultDto<AgentDto>> GetAllAsync(PagedAndSortedResultRequestDto input);
         Task<AgentDto> CreateAsync(CreateUpdateAgentDto input);
         Task<AgentDto> UpdateAsync(Guid id, CreateUpdateAgentDto input);
         Task DeleteAsync(Guid id);

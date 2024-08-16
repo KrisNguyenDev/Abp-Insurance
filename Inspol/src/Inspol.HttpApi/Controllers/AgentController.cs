@@ -26,14 +26,14 @@ namespace Inspol.Controllers
         [HttpGet]
         public async Task<IActionResult> GetListAsync([FromQuery] PagedAndSortedResultRequestDto input)
         {
-            var agents = await _agentAppService.GetListAsync(input);
+            var agents = await _agentAppService.GetAllAsync(input);
             return Ok(agents);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync([FromRoute] Guid id)
         {
-            var agent = await _agentAppService.GetAsync(id);
+            var agent = await _agentAppService.GetByIdAsync(id);
 
             if (agent == null)
             {
@@ -52,7 +52,7 @@ namespace Inspol.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] CreateUpdateAgentDto input)
         {
-            var agent = await _agentAppService.GetAsync(id);
+            var agent = await _agentAppService.GetByIdAsync(id);
 
             if (agent == null)
             {
@@ -65,7 +65,7 @@ namespace Inspol.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
         {
-            var agent = await _agentAppService.GetAsync(id);
+            var agent = await _agentAppService.GetByIdAsync(id);
 
             if (agent == null)
             {

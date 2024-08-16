@@ -20,13 +20,14 @@ namespace Inspol.Services
             _repository = repository;
         }
 
-        public async Task<AgentDto> GetAsync(Guid id)
+        public async Task<AgentDto> GetByIdAsync(Guid id)
         {
-            var agent = await _repository.GetAsync(id);
+            var agent = await _repository.FindAsync(id);
+
             return ObjectMapper.Map<Agent, AgentDto>(agent);
         }
 
-        public async Task<PagedResultDto<AgentDto>> GetListAsync(PagedAndSortedResultRequestDto input)
+        public async Task<PagedResultDto<AgentDto>> GetAllAsync(PagedAndSortedResultRequestDto input)
         {
             var agents = await _repository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
             var totalCount = await _repository.GetCountAsync();
