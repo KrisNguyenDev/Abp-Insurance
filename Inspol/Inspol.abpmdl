@@ -1,0 +1,85 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.Account": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Inspol.Application": {
+      "path": "src/Inspol.Application/Inspol.Application.abppkg",
+      "folder": "src"
+    },
+    "Inspol.Application.Tests": {
+      "path": "test/Inspol.Application.Tests/Inspol.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Inspol.Domain.Shared": {
+      "path": "src/Inspol.Domain.Shared/Inspol.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Inspol.Application.Contracts": {
+      "path": "src/Inspol.Application.Contracts/Inspol.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Inspol.HttpApi": {
+      "path": "src/Inspol.HttpApi/Inspol.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Inspol.HttpApi.Client": {
+      "path": "src/Inspol.HttpApi.Client/Inspol.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Inspol.EntityFrameworkCore.Tests": {
+      "path": "test/Inspol.EntityFrameworkCore.Tests/Inspol.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Inspol.EntityFrameworkCore": {
+      "path": "src/Inspol.EntityFrameworkCore/Inspol.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Inspol.TestBase": {
+      "path": "test/Inspol.TestBase/Inspol.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Inspol.Domain.Tests": {
+      "path": "test/Inspol.Domain.Tests/Inspol.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Inspol.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Inspol.HttpApi.Client.ConsoleTestApp/Inspol.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Inspol.DbMigrator": {
+      "path": "src/Inspol.DbMigrator/Inspol.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Inspol.HttpApi.Host": {
+      "path": "src/Inspol.HttpApi.Host/Inspol.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "Inspol.Domain": {
+      "path": "src/Inspol.Domain/Inspol.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
