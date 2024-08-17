@@ -133,6 +133,34 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
         }
 
 
+
+
+        // React Client
+        var reactClientId = configurationSection["React_Spa:ClientId"];
+        if (!reactClientId.IsNullOrWhiteSpace())
+        {
+            var reactClientRootUrl = configurationSection["React_Spa:RootUrl"]?.TrimEnd('/');
+            await CreateApplicationAsync(
+                name: reactClientId!,
+                type: OpenIddictConstants.ClientTypes.Public,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "React client",
+                secret: null,
+                grantTypes: new List<string> {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                    OpenIddictConstants.GrantTypes.Password,
+                    OpenIddictConstants.GrantTypes.ClientCredentials,
+                    OpenIddictConstants.GrantTypes.RefreshToken,
+                    "LinkLogin",
+                    "Impersonation"
+                },
+                scopes: commonScopes,
+                redirectUri: reactClientRootUrl,
+                postLogoutRedirectUri: reactClientRootUrl,
+                clientUri: reactClientRootUrl,
+                logoUri: "/images/clients/angular.svg"
+            );
+        }
     }
 
     private async Task CreateApplicationAsync(
